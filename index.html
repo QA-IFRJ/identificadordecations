@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Identificador de Cátions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Identificador de Cátions</h1>
+    <div class="top-actions">
+      <button id="theme-toggle" class="btn" type="button" aria-label="Alternar modo">🌙</button>
+    </div>
+  </header>
+
+  <main class="grid">
+
+    <section class="card">
+      <h2>Seleção de grupos a analisar</h2>
+
+      <div class="groups">
+        <label><input type="checkbox" class="grp" value="cloretos"> Cloretos Insolúveis</label>
+        <label><input type="checkbox" class="grp" value="sulfetos"> Sulfetos</label>
+        <label><input type="checkbox" class="grp" value="hidroxido_amoniacal"> Hidróxido em Meio Amoniacal</label>
+        <label><input type="checkbox" class="grp" value="sulfetos_amoniacal"> Sulfetos em Meio Amoniacal</label>
+        <label><input type="checkbox" class="grp" value="carbonato_amonio"> Carbonato de Amônio</label>
+        <label><input type="checkbox" class="grp" value="soluveis"> Solúveis</label>
+      </div>
+
+      <div class="group-controls">
+        <button id="select-all" class="btn" type="button">Selecionar Todos</button>
+        <button id="clear-all" class="btn" type="button">Limpar Seleção</button>
+      </div>
+
+      <p class="hint">A matriz inicial mostrará somente os cátions pertencentes aos grupos marcados.</p>
+    </section>
+
+    <section class="card">
+      <h2>Entradas experimentais</h2>
+
+      <label class="field">
+        Cor da solução
+        <input id="color" type="text" placeholder="ex.: incolor, amarelo, laranja, verde, azul, rosa">
+      </label>
+
+      <div class="test-grid">
+        <label class="field">
+          HCl
+          <input id="HCl" type="text" placeholder="ppt branco / não precipita">
+        </label>
+
+        <label class="field">
+          NH₄OH
+          <input id="NH4OH" type="text" placeholder="ppt branco / não precipita">
+        </label>
+
+        <label class="field">
+          S²⁻
+          <input id="S2" type="text" placeholder="ppt preto / não precipita">
+        </label>
+
+        <label class="field">
+          NaOH
+          <input id="NaOH" type="text" placeholder="ppt azul / não precipita">
+        </label>
+
+        <label class="field">
+          Aquecimento
+          <input id="aquecimento" type="text" placeholder="ppt branco / não precipita">
+        </label>
+
+        <label class="field">
+          SO₄²⁻
+          <input id="SO4" type="text" placeholder="ppt branco / não precipita">
+        </label>
+      </div>
+
+      <div class="buttons">
+        <button id="identify" class="btn primary" type="button">Identificar</button>
+        <button id="clear" class="btn" type="button">Limpar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Universo Analítico</h2>
+      <pre id="universe" class="result">(nenhuma seleção)</pre>
+    </section>
+
+    <section class="card full">
+      <h2>Matriz de possibilidades</h2>
+      <div id="final-matrix" class="matrix">(nenhuma análise)</div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    Desenvolvido por Arthur Moraes
+  </footer>
+
+  <script src="cation_data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
